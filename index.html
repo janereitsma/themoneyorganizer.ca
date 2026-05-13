@@ -503,6 +503,49 @@
     letter-spacing: -0.03em;
   }
   .product-price-note { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+  
+  /* Pricing tiers */
+  .product-pricing-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0 2.5rem 0;
+  }
+  .pricing-tier {
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .pricing-tier:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.5);
+  }
+  .tier-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    opacity: 0.9;
+  }
+  .tier-price {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .tier-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    font-weight: 500;
+  }
   .btn-light {
     display: inline-block;
     background: #fff;
@@ -1058,34 +1101,51 @@
     <div>
       <div class="product-label">My Money Organized</div>
       <h2 class="product-title">See <em>everything</em> in one place</h2>
-      <p class="product-desc">A Google Sheets tool that shows you the full picture of your finances — business income, personal expenses, tax projections, debt paydown, budgeting, and more. No more piecing together info from five different apps.</p>
+      <p class="product-desc">A Google Sheets or Excel tool that shows you the full picture of your finances — business income, personal expenses, tax projections, debt paydown, budgeting, savings, and more. Bank your transactions with our CSV importer, track everything in one place, and get clarity without juggling five different apps.</p>
       <div class="product-features">
         <div class="product-feat">
           <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span>All transactions in one master sheet — business and personal</span>
+          <span>CSV bank importer — easily load transactions from your bank</span>
         </div>
         <div class="product-feat">
           <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span>Automatic tax projections (income tax, GST/HST, CPP)</span>
+          <span>CRA-compliant expense & GST/HST tracking with monthly & quarterly breakdowns</span>
         </div>
         <div class="product-feat">
           <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span>Budget tracker with actuals vs. targets</span>
+          <span>Tax estimator with flexible income type set-asides</span>
         </div>
         <div class="product-feat">
           <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span>Debt paydown planner (avalanche vs. snowball)</span>
+          <span>Personal budget & 24-month debt paydown planner</span>
         </div>
         <div class="product-feat">
           <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span>Customized to your specific income sources & categories</span>
+          <span>Savings & investment tracking + future budget planning</span>
+        </div>
+        <div class="product-feat">
+          <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span>Customized to your specific income sources & business categories</span>
         </div>
       </div>
-      <div class="product-price-block">
-        <div class="product-price-big">$300</div>
-        <div class="product-price-note">one-time · includes setup & training</div>
+      <div class="product-pricing-tiers">
+        <div class="pricing-tier">
+          <div class="tier-label">Essential</div>
+          <div class="tier-price">$50</div>
+          <div class="tier-note">Tool only, self-guided setup</div>
+        </div>
+        <div class="pricing-tier">
+          <div class="tier-label">Guided</div>
+          <div class="tier-price"><span style="text-decoration: line-through; opacity: 0.6; font-size: 0.65em;">$300</span> $150</div>
+          <div class="tier-note">Tool + 1 hour training</div>
+        </div>
+        <div class="pricing-tier">
+          <div class="tier-label">Full Launch</div>
+          <div class="tier-price">$500+</div>
+          <div class="tier-note">4 hours setup & training included</div>
+        </div>
       </div>
-      <a href="#contact" class="btn-light">Get My Money Organized</a>
+      <a href="#contact" class="btn-light">Get Started</a>
     </div>
     <div class="product-mockup">
       <div class="mock-card">
@@ -1130,13 +1190,15 @@
       <div class="about-credentials">
         <span class="credential-badge">🏦 Former Bank Account Manager</span>
         <span class="credential-badge">📊 Small Business Bookkeeper</span>
-        <span class="credential-badge amber">🎓 Adult Educator</span>
+        <span class="credential-badge amber">🎓 Adult Educator (PIDP)</span>
+        <span class="credential-badge">📚 Self-Employment Program (Douglas College)</span>
+        <span class="credential-badge">📚 Accounting for Managers (BCIT)</span>
       </div>
     </div>
     <div class="about-content fade-up">
       <div class="section-label">About Jane</div>
       <h2 class="section-title">I learned this the hard way,<br>so you don't have to.</h2>
-      <p>I'm not an accountant or financial advisor — I'm someone who figured out bookkeeping and financial organization as an entrepreneur, then spent years helping businesses and nonprofits do the same.</p>
+      <p>I'm not an accountant or financial advisor — I'm someone who figured out bookkeeping and financial organization as an entrepreneur, then spent years helping businesses and nonprofits do the same. I've formalized this knowledge through the Self-Employment Program at Douglas College and Accounting for Managers at BCIT.</p>
       <p>I started my career at a bank, working as an account manager and earning my securities license. But it was running my own business that taught me what really matters: having a clear, simple system you actually understand and use.</p>
       <p>Since then I've done bookkeeping for small businesses and nonprofits, set up QuickBooks systems from scratch, and helped people dig out from years of catch-up work. I built the <em>My Money Organized</em> spreadsheet tool because I wanted something that worked the way real people think about money.</p>
       <p>My goal is always to work myself out of a job. The sooner you're running your own books with confidence, the better I've done mine.</p>
@@ -1194,14 +1256,14 @@
         <span data-fs-error="email" style="font-size: 0.75rem; color: var(--amber-400); margin-top: 0.25rem;"></span>
       </div>
       <div class="form-group" style="margin-bottom:1rem;">
-        <label for="interest">What are you looking for?</label>
+        <label for="interest">What are you interested in?</label>
         <select id="interest" name="interest" data-fs-field>
           <option value="">Select one...</option>
-          <option>QuickBooks setup and training</option>
-          <option>My Money Organized spreadsheet</option>
-          <option>QuickBooks + My Money Organized bundle</option>
-          <option>Bookkeeping catch-up</option>
-          <option>Ongoing coaching</option>
+          <option>My Money Organizer — $50 (self-guided)</option>
+          <option>My Money Organizer — $150 (with 1 hour training)</option>
+          <option>QuickBooks setup $500+ (includes 4 hours training & setup)</option>
+          <option>Ongoing coaching — $150+/month</option>
+          <option>Multiple services / custom package</option>
           <option>Not sure yet — let's talk</option>
         </select>
         <span data-fs-error="interest" style="font-size: 0.75rem; color: var(--amber-400); margin-top: 0.25rem;"></span>
