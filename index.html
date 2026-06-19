@@ -361,6 +361,33 @@
   }
   .step p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
 
+  /* ── FREE RESOURCES ── */
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .resource-card .who-tag { margin-bottom: 0.9rem; display: inline-block; }
+  .resource-card p { min-height: 2.8rem; }
+  .btn-small {
+    display: inline-block;
+    color: var(--teal-600);
+    padding: 0.55rem 1.2rem;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border: 1.5px solid var(--teal-200);
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+  .btn-small:hover { background: var(--teal-400); border-color: var(--teal-400); color: #fff; }
+  .resources-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2rem;
+    text-align: center;
+  }
+
   /* ── SERVICES ── */
   #services { background: var(--warm-bg); }
   .services-grid {
@@ -737,7 +764,7 @@
     #hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 4rem; gap: 3rem; }
     .hero-title { font-size: 2.5rem; }
     section { padding: 4rem 1.5rem; }
-    .who-grid, .steps, .services-grid { grid-template-columns: 1fr; }
+    .who-grid, .steps, .services-grid, .resources-grid { grid-template-columns: 1fr; }
     .steps::before { display: none; }
     .product-inner { grid-template-columns: 1fr; gap: 3rem; }
     .about-inner { grid-template-columns: 1fr; }
@@ -758,6 +785,7 @@
     <li><a href="#who">Who I Help</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#learn">Learn</a></li>
+    <li><a href="#resources">Free Resources</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#product">My Money Organizer</a></li>
     <li><a href="#about">About Jane</a></li>
@@ -1028,6 +1056,61 @@
         </a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- FREE RESOURCES -->
+<section id="resources" style="background: var(--warm-bg);">
+  <div class="section-inner">
+    <div class="section-label">Free Resources</div>
+    <h2 class="section-title fade-up">Tax date worksheets,<br><em style="font-family:var(--serif); color:var(--teal-400);">built for sole proprietors</em></h2>
+    <p class="section-sub fade-up">A fillable one-page PDF with your GST/HST dates, business numbers, and a mileage log — your entries save right in the file. Pick your province or territory below. <em>(Corporation version coming soon.)</em></p>
+    <div class="resources-grid">
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>British Columbia</h3>
+        <p>GST/HST dates, BC PST &amp; filing frequency, mileage log, calendar reminders.</p>
+        <a href="downloads/quick-reference-bc-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Ontario</h3>
+        <p>GST/HST (HST) dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="downloads/quick-reference-on-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Alberta</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="downloads/quick-reference-ab-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Yukon</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="downloads/quick-reference-yt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Northwest Territories</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="downloads/quick-reference-nt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Nunavut</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="downloads/quick-reference-nu-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+    </div>
+    <p class="resources-note">100% free, no email required. General information only — not professional tax advice.</p>
   </div>
 </section>
 
