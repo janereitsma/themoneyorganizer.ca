@@ -530,7 +530,7 @@
     letter-spacing: -0.03em;
   }
   .product-price-note { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
-  
+
   /* Pricing tiers */
   .product-pricing-tiers {
     display: grid;
@@ -1121,7 +1121,7 @@
     <h2 class="section-title fade-up">Choose what fits your needs</h2>
     <p class="section-sub fade-up">Everything is tailored to your specific situation — whether you're starting fresh or catching up from years behind.</p>
     <div class="services-grid">
-      
+
       <div class="service-card fade-up">
         <span class="service-badge">Most Popular</span>
         <h3>QuickBooks Setup & Training</h3>
@@ -1211,8 +1211,10 @@
       <div class="product-pricing-tiers">
         <div class="pricing-tier">
           <div class="tier-label">Essential</div>
-          <div class="tier-price">$50</div>
+          <div class="tier-price"><span style="text-decoration:line-through; opacity:0.55; font-size:1.1rem; margin-right:0.4rem;">$50</span>$20</div>
           <div class="tier-note">Tool only, self-guided setup</div>
+          <div style="font-size:0.68rem; color:var(--amber-100); font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-top:0.5rem;">Limited time offer</div>
+          <a href="https://www.paypal.com/ncp/payment/P5M7MUBKM5L9C" class="btn-light" style="display:inline-block; margin-top:1rem; padding:0.6rem 1.3rem; font-size:0.85rem;" target="_blank" rel="noopener">Buy Now — $20 CAD</a>
         </div>
         <div class="pricing-tier">
           <div class="tier-label">Guided</div>
@@ -1304,13 +1306,13 @@
     <div class="section-label">Get in Touch</div>
     <h2 class="section-title fade-up">Book a free discovery call</h2>
     <p class="section-sub fade-up">No commitment, no pressure. We'll talk through your situation, figure out what makes sense, and I'll give you an honest answer about whether I can help.</p>
-    
+
     <!-- Success/error messages -->
     <div data-fs-success style="display:none; background: var(--teal-50); color: var(--teal-600); padding: 1rem; border-radius: var(--radius); margin-bottom: 1.5rem; text-align: center; font-weight: 500;">
       ✓ Message sent! I'll be in touch within 1–2 business days.
     </div>
     <div data-fs-error style="display:none; background: var(--amber-50); color: var(--amber-400); padding: 1rem; border-radius: var(--radius); margin-bottom: 1.5rem; text-align: center; font-weight: 500;"></div>
-    
+
     <form class="contact-form fade-up" id="my-form">
       <div class="form-row">
         <div class="form-group">
@@ -1333,7 +1335,7 @@
         <label for="interest">What are you interested in?</label>
         <select id="interest" name="interest" data-fs-field>
           <option value="">Select one...</option>
-          <option>My Money Organizer — $50 (self-guided)</option>
+          <option>My Money Organizer — $20 (self-guided, limited time)</option>
           <option>My Money Organizer — $150 (with 1 hour training)</option>
           <option>QuickBooks setup $500+ (includes 4 hours training & setup)</option>
           <option>Ongoing coaching — $150+/month</option>
