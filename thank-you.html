@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — The Money Organizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-50: #E1F5EE;
+    --teal-100: #9FE1CB;
+    --teal-200: #5DCAA5;
+    --teal-400: #1D9E75;
+    --teal-600: #0F6E56;
+    --teal-800: #085041;
+    --teal-900: #04342C;
+    --amber-50: #FAEEDA;
+    --amber-100: #FAC775;
+    --amber-400: #BA7517;
+    --warm-white: #FDFAF5;
+    --warm-bg: #F5F0E8;
+    --text-dark: #1C2B26;
+    --text-mid: #3D5249;
+    --text-muted: #7A9189;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--warm-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .card {
+    background: var(--warm-white);
+    border-radius: var(--radius-lg);
+    max-width: 560px;
+    width: 100%;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(8, 80, 65, 0.10);
+    border: 1px solid rgba(29, 158, 117, 0.12);
+  }
+  .checkmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal-200), var(--teal-400));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .checkmark svg { width: 28px; height: 28px; }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+  }
+  p {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+    background: var(--teal-400);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    margin: 0.75rem 0 1.5rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
+  .note {
+    background: var(--teal-50);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.1rem;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  .note strong { color: var(--text-dark); }
+  .footer-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(29,158,117,0.12);
+    padding-top: 1.25rem;
+    margin-top: 0.5rem;
+  }
+  .footer-note a { color: var(--teal-600); text-decoration: none; font-weight: 500; }
+  .footer-note a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="checkmark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13l4 4L19 7" stroke="#FDFAF5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Thank you for your purchase!</h1>
+    <p>Your Starting a Small Business Quick Reference Guide is ready to download. Click below to open the folder and grab your province or territory's PDF.</p>
+
+    <a href="https://drive.google.com/drive/folders/13IXwxsLwydz2arZkz696UL-vxqMIMToe" class="btn-primary" target="_blank" rel="noopener">Download Your Guide</a>
+
+    <div class="note">
+      <strong>Note:</strong> This link opens the full folder of all 13 provincial &amp; territorial guides — feel free to download any others you need for future reference.
+    </div>
+
+    <div class="footer-note">
+      Questions about your order? Email <a href="mailto:jane@themoneyorganizer.ca">jane@themoneyorganizer.ca</a> or visit <a href="https://themoneyorganizer.ca" target="_blank" rel="noopener">themoneyorganizer.ca</a>.
+    </div>
+  </div>
+</body>
+</html>
