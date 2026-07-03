@@ -388,53 +388,48 @@
     text-align: center;
   }
 
-  /* ── STARTING A BUSINESS (single product) ── */
-  .start-biz-product {
-    max-width: 560px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #fff 0%, var(--teal-50) 100%);
-    border: 1px solid rgba(29,158,117,0.15);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 2.75rem;
+  /* ── STARTING A BUSINESS (compact free grid) ── */
+  .start-biz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 0.75rem;
+  }
+  .start-biz-card {
+    background: #fff;
+    border: 1px solid rgba(29,158,117,0.12);
+    border-radius: var(--radius);
+    padding: 1rem 0.75rem;
     text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .start-biz-product-badge {
+  .start-biz-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,110,86,0.08); }
+  .start-biz-card.free { border-color: var(--teal-200); background: linear-gradient(135deg, #fff 0%, var(--teal-50) 100%); }
+  .start-biz-province { font-family: var(--serif); font-size: 0.95rem; color: var(--text-dark); margin-bottom: 0.35rem; line-height: 1.25; }
+  .start-biz-price { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .start-biz-price.free-tag { color: var(--teal-600); }
+  .btn-tiny {
     display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal-600);
-    background: var(--teal-50);
-    padding: 0.3rem 0.9rem;
+    font-size: 0.76rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
     border-radius: 100px;
-    margin-bottom: 1.1rem;
+    text-decoration: none;
+    border: 1.5px solid var(--teal-400);
+    color: var(--teal-600);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
-  .start-biz-product-title {
+  .btn-tiny:hover { background: var(--teal-400); border-color: var(--teal-400); color: #fff; }
+  .resources-subhead {
     font-family: var(--serif);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: var(--text-dark);
-    margin-bottom: 0.85rem;
-    line-height: 1.25;
+    margin: 3rem 0 0.5rem;
   }
-  .start-biz-product-desc {
+  .resources-subhead-note {
     font-size: 0.92rem;
     color: var(--text-mid);
-    line-height: 1.75;
     margin-bottom: 1.5rem;
-  }
-  .start-biz-product-price {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--teal-600);
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-  }
-  .start-biz-product-price span {
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--text-muted);
-    letter-spacing: 0;
+    max-width: 580px;
   }
 
   /* ── SERVICES ── */
@@ -835,7 +830,6 @@
     <li><a href="#how">How It Works</a></li>
     <li><a href="#learn">Learn</a></li>
     <li><a href="#resources">Free Resources</a></li>
-    <li><a href="#start-business">Start a Business</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#product">My Money Organizer</a></li>
     <li><a href="#about">About Jane</a></li>
@@ -1161,25 +1155,91 @@
 
     </div>
     <p class="resources-note">100% free, no email required. General information only — not professional tax advice.</p>
-  </div>
-</section>
 
-<!-- STARTING A BUSINESS -->
-<section id="start-business" style="background: var(--warm-white);">
-  <div class="section-inner">
-    <div class="section-label">Starting a Business</div>
-    <h2 class="section-title fade-up">Thinking about registering<br><em style="font-family:var(--serif); color:var(--teal-400);">your own business?</em></h2>
-    <p class="section-sub fade-up">One guide walks you through choosing and registering a business name, figuring out when GST/HST/PST kicks in, and what to do if you sell across provinces — written for every Canadian province and territory, all in one download.</p>
+    <h3 class="resources-subhead">Starting a new business?</h3>
+    <p class="resources-subhead-note">A step-by-step checklist for choosing and registering your business name, and knowing exactly when GST/HST/PST kicks in — plus place-of-supply rules if you sell across Canada. One guide per province and territory, all free.</p>
+    <div class="start-biz-grid">
 
-    <div class="start-biz-product fade-up">
-      <div class="start-biz-product-badge">Available for All Provinces &amp; Territories</div>
-      <h3 class="start-biz-product-title">Starting a Small Business — Quick Reference Guide</h3>
-      <p class="start-biz-product-desc">Covers British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec, New Brunswick, Nova Scotia, Prince Edward Island, Newfoundland &amp; Labrador, Yukon, Northwest Territories, and Nunavut — a step-by-step checklist for name registration, tax registration, and accounting basics, tailored to each province and territory's exact rules.</p>
-      <div class="start-biz-product-price">$10 <span>CAD, one-time</span></div>
-      <a href="https://www.paypal.com/ncp/payment/KQCHFSYCLZ2AS" class="btn-primary" target="_blank" rel="noopener">Buy Now</a>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">British Columbia</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-bc-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Alberta</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-ab-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Saskatchewan</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-sk-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Manitoba</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-mb-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Ontario</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-on-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Quebec</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-qc-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">New Brunswick</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-nb-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Nova Scotia</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-ns-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Prince Edward Island</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-pe-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Newfoundland &amp; Labrador</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-nl-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Yukon</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-yt-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Northwest Territories</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-nt-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Nunavut</div>
+        <div class="start-biz-price free-tag">Free</div>
+        <a href="PDFs/quick-reference-nu-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
     </div>
-
-    <p class="resources-note">Delivered instantly — after checkout, PayPal takes you straight to your download page.</p>
+    <p class="resources-note">100% free, no email required. General information only — not professional tax or legal advice.</p>
   </div>
 </section>
 
