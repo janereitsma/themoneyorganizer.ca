@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Free Resources — The Money Organizer</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal-50:  #E1F5EE;
+    --teal-100: #9FE1CB;
+    --teal-200: #5DCAA5;
+    --teal-400: #1D9E75;
+    --teal-600: #0F6E56;
+    --teal-800: #085041;
+    --teal-900: #04342C;
+    --amber-50:  #FAEEDA;
+    --amber-100: #FAC775;
+    --amber-400: #BA7517;
+    --warm-white: #FDFAF5;
+    --warm-bg: #F5F0E8;
+    --text-dark: #1C2B26;
+    --text-mid: #3D5249;
+    --text-muted: #7A9189;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--warm-white);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    background: rgba(253,250,245,0.96);
+    border-bottom: 1px solid rgba(29,158,117,0.12);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--teal-600);
+    text-decoration: none;
+  }
+  .nav-back {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.4rem;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--teal-400); }
+
+  .access-hero {
+    background: var(--teal-800);
+    padding: 5rem 2.5rem 4rem;
+    text-align: center;
+  }
+  .access-badge {
+    display: inline-block;
+    background: var(--teal-400);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .access-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .access-hero h1 em { font-style: italic; color: var(--teal-100); }
+  .access-hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  .btn-access {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #fff;
+    color: var(--teal-600);
+    padding: 1rem 2.25rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .btn-access:hover { background: var(--teal-50); transform: translateY(-2px); }
+
+  .how-section {
+    padding: 4rem 2.5rem;
+    background: var(--warm-bg);
+  }
+  .how-inner { max-width: 720px; margin: 0 auto; }
+  .how-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-400);
+    margin-bottom: 0.75rem;
+  }
+  .how-title {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+  .steps-simple { display: flex; flex-direction: column; gap: 1.25rem; }
+  .step-simple {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(29,158,117,0.1);
+  }
+  .step-num-small {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--teal-400);
+    color: #fff;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-simple h3 { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.2rem; }
+  .step-simple p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; }
+  .step-simple code {
+    background: var(--teal-50);
+    color: var(--teal-600);
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: var(--sans);
+    font-weight: 600;
+  }
+
+  .inside-section { padding: 4rem 2.5rem; background: var(--warm-white); }
+  .inside-inner { max-width: 720px; margin: 0 auto; }
+  .resource-block {
+    background: #fff;
+    border: 1px solid rgba(29,158,117,0.12);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .resource-block-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-400);
+    margin-bottom: 0.5rem;
+  }
+  .resource-block h3 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+  .resource-block p { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1.1rem; line-height: 1.7; }
+  .province-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .ptag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    background: var(--teal-50);
+    color: var(--teal-600);
+  }
+
+  .cta-strip {
+    background: var(--teal-400);
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+  }
+  .cta-strip h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  .cta-strip p { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 1.75rem; font-weight: 300; }
+  .btn-light {
+    display: inline-block;
+    background: #fff;
+    color: var(--teal-600);
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-light:hover { background: var(--teal-50); transform: translateY(-1px); }
+
+  footer {
+    background: var(--teal-900);
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+  footer strong { color: rgba(255,255,255,0.85); }
+  footer a { color: var(--teal-100); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.25rem; }
+    .access-hero { padding: 3.5rem 1.25rem 3rem; }
+    .how-section, .inside-section { padding: 3rem 1.25rem; }
+    .cta-strip { padding: 3rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://themoneyorganizer.ca" class="nav-logo">The Money Organizer</a>
+  <a href="https://themoneyorganizer.ca" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M9 2L5 7l4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Back to site
+  </a>
+</nav>
+
+<div class="access-hero">
+  <div class="access-badge">✓ You're in!</div>
+  <h1>Your free resources<br>are <em>ready to copy</em></h1>
+  <p>Click below to open the Google Drive folder. Find your province or territory, make a copy — and never miss a sole proprietor tax deadline again.</p>
+  <a href="https://drive.google.com/drive/folders/1ovT2oBuHEWXhcfccorXQk8fl54jIgtm3?usp=sharing"
+     class="btn-access" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+    </svg>
+    Open the Resource Folder
+  </a>
+</div>
+
+<div class="how-section">
+  <div class="how-inner">
+    <div class="how-label">How to get your copy</div>
+    <h2 class="how-title">Three steps to your editable sheet</h2>
+    <div class="steps-simple">
+      <div class="step-simple">
+        <div class="step-num-small">1</div>
+        <div>
+          <h3>Open the folder</h3>
+          <p>Click the button above to open the shared Google Drive folder. You'll see all available resources organized inside.</p>
+        </div>
+      </div>
+      <div class="step-simple">
+        <div class="step-num-small">2</div>
+        <div>
+          <h3>Find your province or territory</h3>
+          <p>Open the file for your province or territory. Each one has the correct tax dates, filing frequency, direct links to the right CRA pages, and instructions for adding key dates to your Google Calendar.</p>
+        </div>
+      </div>
+      <div class="step-simple">
+        <div class="step-num-small">3</div>
+        <div>
+          <h3>Make a copy</h3>
+          <p>In Google Sheets, go to <code>File → Make a copy</code>. This saves it to your own Google Drive so you can fill it in, edit it, and keep it forever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="inside-section">
+  <div class="inside-inner">
+    <div class="how-label">What's in the folder</div>
+    <h2 class="how-title">Two free resources, all provinces &amp; territories</h2>
+
+    <div class="resource-block">
+      <div class="resource-block-label">Tax Date Tracker — Sole Proprietor</div>
+      <h3>Never miss an important filing date again</h3>
+      <p>A free Google Sheet designed to help sole proprietors track their most important tax dates — including direct links to the right CRA and government pages so you're always in the right place. Add the dates to your Google Calendar in minutes and stop worrying about what's due when. Tailored to your province or territory.</p>
+      <div class="province-tags">
+        <span class="ptag">British Columbia</span>
+        <span class="ptag">Ontario</span>
+        <span class="ptag">Alberta</span>
+        <span class="ptag">Yukon</span>
+        <span class="ptag">Northwest Territories</span>
+        <span class="ptag">Nunavut</span>
+      </div>
+    </div>
+
+    <div class="resource-block">
+      <div class="resource-block-label">Starting a New Business</div>
+      <h3>Registration checklist &amp; GST/HST/PST guide</h3>
+      <p>Step-by-step guide for choosing and registering your business name, knowing when GST/HST/PST kicks in, and understanding place-of-supply rules if you sell across Canada.</p>
+      <div class="province-tags">
+        <span class="ptag">British Columbia</span>
+        <span class="ptag">Alberta</span>
+        <span class="ptag">Saskatchewan</span>
+        <span class="ptag">Manitoba</span>
+        <span class="ptag">Ontario</span>
+        <span class="ptag">Quebec</span>
+        <span class="ptag">New Brunswick</span>
+        <span class="ptag">Nova Scotia</span>
+        <span class="ptag">Prince Edward Island</span>
+        <span class="ptag">Newfoundland &amp; Labrador</span>
+        <span class="ptag">Yukon</span>
+        <span class="ptag">Northwest Territories</span>
+        <span class="ptag">Nunavut</span>
+      </div>
+    </div>
+
+    <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1rem;">General information only — not professional tax or legal advice. More resources coming soon.</p>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <h2>Want the full picture of your finances?</h2>
+  <p>The My Money Organizer spreadsheet pulls everything into one place — income, expenses, budgeting, tax projections, and debt paydown.</p>
+  <a href="https://themoneyorganizer.ca/#product" class="btn-light">See My Money Organizer</a>
+</div>
+
+<footer>
+  <p><strong>The Money Organizer</strong> &nbsp;·&nbsp; Jane Reitsma &nbsp;·&nbsp; <a href="https://themoneyorganizer.ca">themoneyorganizer.ca</a></p>
+  <p style="margin-top:0.5rem;">Based in British Columbia, Canada &nbsp;·&nbsp; Virtual sessions available across Canada</p>
+  <p style="margin-top:0.5rem; opacity:0.6;">Jane Reitsma is not a licensed accountant or financial advisor. General information only.</p>
+</footer>
+
+</body>
+</html>
