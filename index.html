@@ -179,6 +179,9 @@
     text-decoration: none;
     transition: background 0.2s, transform 0.15s;
     letter-spacing: 0.01em;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
   }
   .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
   .btn-ghost {
@@ -388,79 +391,67 @@
     text-align: center;
   }
 
-  /* ── STARTING A BUSINESS (compact free grid) ── */
-  .start-biz-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-    gap: 0.75rem;
-  }
-  .start-biz-card {
+  /* ── NEWSLETTER GATE ── */
+  .newsletter-gate {
     background: #fff;
-    border: 1px solid rgba(29,158,117,0.12);
-    border-radius: var(--radius);
-    padding: 1rem 0.75rem;
+    border: 1px solid rgba(29,158,117,0.15);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem 2.5rem;
+    max-width: 560px;
+    margin: 0 auto;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .start-biz-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,110,86,0.08); }
-  .start-biz-card.free { border-color: var(--teal-200); background: linear-gradient(135deg, #fff 0%, var(--teal-50) 100%); }
-  .start-biz-province { font-family: var(--serif); font-size: 0.95rem; color: var(--text-dark); margin-bottom: 0.35rem; line-height: 1.25; }
-  .start-biz-price { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.6rem; }
-  .start-biz-price.free-tag { color: var(--teal-600); }
-  .btn-tiny {
-    display: inline-block;
-    font-size: 0.76rem;
-    font-weight: 500;
-    padding: 0.35rem 0.85rem;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1.5px solid var(--teal-400);
-    color: var(--teal-600);
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-  }
-  .btn-tiny:hover { background: var(--teal-400); border-color: var(--teal-400); color: #fff; }
-  .resources-subhead {
+  .newsletter-gate-title {
     font-family: var(--serif);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--text-dark);
-    margin: 3rem 0 0.5rem;
+    margin-bottom: 0.65rem;
   }
-  .resources-subhead-note {
-    font-size: 0.92rem;
+  .newsletter-gate-note {
+    font-size: 0.88rem;
     color: var(--text-mid);
+    line-height: 1.65;
     margin-bottom: 1.5rem;
-    max-width: 580px;
   }
-
-  /* Province tags for resources */
-  .province-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
-  .ptag {
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.25rem 0.7rem;
-    border-radius: 100px;
-    background: var(--teal-50);
-    color: var(--teal-600);
-  }
-  .resource-cta-block {
-    margin-top: 2.5rem;
-    text-align: center;
-  }
-  .btn-access-main {
-    display: inline-flex;
-    align-items: center;
+  .newsletter-gate-form {
+    display: flex;
     gap: 0.6rem;
-    background: var(--teal-400);
-    color: #fff;
-    padding: 1rem 2.25rem;
-    border-radius: 100px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 4px 20px rgba(29,158,117,0.25);
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .btn-access-main:hover { background: var(--teal-600); transform: translateY(-2px); }
+  .newsletter-gate-form input[type="email"] {
+    flex: 1;
+    min-width: 220px;
+    padding: 0.8rem 1.1rem;
+    border: 1.5px solid rgba(29,158,117,0.2);
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    background: var(--warm-white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .newsletter-gate-form input[type="email"]:focus { border-color: var(--teal-400); }
+  .newsletter-gate-privacy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  .newsletter-gate-error {
+    display: none;
+    color: var(--amber-400);
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+  }
+  .resources-unlocked-note {
+    font-size: 0.85rem;
+    color: var(--teal-600);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 500;
+  }
 
   /* ── SERVICES ── */
   #services { background: var(--warm-bg); }
@@ -812,29 +803,6 @@
   .form-submit:disabled { background: var(--text-muted); cursor: not-allowed; }
   .form-note { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; }
 
-  /* ── NEWSLETTER ── */
-  #newsletter { padding: 4rem 2.5rem; }
-  #newsletter .kit-inner { max-width: 580px; margin: 0 auto; text-align: center; }
-  #newsletter .section-label { color: rgba(255,255,255,0.75); }
-  #newsletter h2 {
-    font-family: var(--serif);
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    color: #fff;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-  #newsletter h2 em { font-style: italic; color: var(--teal-100); }
-  #newsletter .kit-sub {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.75);
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
-  /* Override Kit form colours to match site */
-  #newsletter .formkit-form { background: transparent !important; }
-  #newsletter .formkit-submit { background: #fff !important; color: var(--teal-600) !important; }
-
   /* ── FOOTER ── */
   footer {
     background: var(--teal-900);
@@ -844,26 +812,6 @@
     font-size: 0.85rem;
   }
   footer strong { color: rgba(255,255,255,0.9); }
-  footer a { color: var(--teal-100); text-decoration: none; transition: color 0.2s; }
-  footer a:hover { color: #fff; }
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
-  }
-  .footer-social a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.7);
-    transition: background 0.2s, color 0.2s;
-  }
-  .footer-social a:hover { background: rgba(255,255,255,0.18); color: #fff; }
 
   /* ── FADE IN ANIMATION ── */
   .fade-up {
@@ -890,6 +838,8 @@
     .about-highlights { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr !important; }
     .intro-bar { margin-top: 56px; }
+    .newsletter-gate { padding: 1.75rem 1.5rem; }
+    .newsletter-gate-form { flex-direction: column; }
   }
 </style>
 </head>
@@ -1180,51 +1130,72 @@
 <section id="resources" style="background: var(--warm-bg);">
   <div class="section-inner">
     <div class="section-label">Free Resources</div>
-    <h2 class="section-title fade-up">Two free resources,<br><em style="font-family:var(--serif); color:var(--teal-400);">built for Canadian small business</em></h2>
-    <p class="section-sub fade-up">Free tools for sole proprietors and new business owners — direct links to the right CRA and provincial pages, so you're never guessing what's due when or what to register. Grab one or both — each is its own quick signup.</p>
+    <h2 class="section-title fade-up">Tax date worksheets,<br><em style="font-family:var(--serif); color:var(--teal-400);">built for sole proprietors</em></h2>
+    <p class="section-sub fade-up">A fillable one-page PDF with your GST/HST dates, business numbers, and a mileage log — your entries save right in the file. Sign up for my newsletter below to unlock your downloads. <em>(Corporation version coming soon.)</em></p>
 
-    <!-- Sole Proprietor resource -->
-    <div class="who-card fade-up" style="margin-bottom: 1.5rem; padding: 2rem 2.25rem;">
-      <span class="who-tag" style="display:inline-block; margin-bottom:0.75rem;">Tax Date Tracker — Sole Proprietor</span>
-      <p style="font-size:0.95rem; color:var(--text-mid); margin-bottom:1rem; line-height:1.7;">Available for British Columbia, Ontario, Alberta, Yukon, Northwest Territories, and Nunavut.</p>
-      <div class="province-tags">
-        <span class="ptag">British Columbia</span>
-        <span class="ptag">Ontario</span>
-        <span class="ptag">Alberta</span>
-        <span class="ptag">Yukon</span>
-        <span class="ptag">Northwest Territories</span>
-        <span class="ptag">Nunavut</span>
-      </div>
-      <a href="https://jane-the-money-organizer.kit.com/947cee2ffc" class="btn-access-main" style="margin-top:1.5rem; padding:0.75rem 1.75rem; font-size:0.9rem;">
-        Get Free Access →
-      </a>
+    <!-- Newsletter signup gate -->
+    <div class="newsletter-gate fade-up" id="resources-gate">
+      <h3 class="newsletter-gate-title">Unlock your free downloads</h3>
+      <p class="newsletter-gate-note">Enter your email to join my newsletter and get instant access to every province's worksheet.</p>
+      <form id="newsletter-form" class="newsletter-gate-form">
+        <input type="email" name="email" placeholder="you@example.com" required data-fs-field>
+        <input type="hidden" name="_subject" value="Newsletter signup — Free Resources">
+        <button type="submit" class="btn-primary">Get Access</button>
+      </form>
+      <p class="newsletter-gate-privacy">Your information is kept private and never sold or shared. You'll only hear from me with occasional updates and tips — never spammed, and you can unsubscribe anytime.</p>
+      <p class="newsletter-gate-error" id="newsletter-error"></p>
     </div>
 
-    <!-- Starting a new business resource -->
-    <div class="who-card fade-up" style="padding: 2rem 2.25rem;">
-      <span class="who-tag" style="display:inline-block; margin-bottom:0.75rem;">Starting a New Business</span>
-      <p style="font-size:0.95rem; color:var(--text-mid); margin-bottom:1rem; line-height:1.7;">Step-by-step checklist for choosing and registering your business name, and knowing exactly when GST/HST/PST kicks in — plus place-of-supply rules if you sell across Canada.</p>
-      <div class="province-tags">
-        <span class="ptag">British Columbia</span>
-        <span class="ptag">Alberta</span>
-        <span class="ptag">Saskatchewan</span>
-        <span class="ptag">Manitoba</span>
-        <span class="ptag">Ontario</span>
-        <span class="ptag">Quebec</span>
-        <span class="ptag">New Brunswick</span>
-        <span class="ptag">Nova Scotia</span>
-        <span class="ptag">Prince Edward Island</span>
-        <span class="ptag">Newfoundland &amp; Labrador</span>
-        <span class="ptag">Yukon</span>
-        <span class="ptag">Northwest Territories</span>
-        <span class="ptag">Nunavut</span>
-      </div>
-      <a href="https://jane-the-money-organizer.kit.com/43ab048485" class="btn-access-main" style="margin-top:1.5rem; padding:0.75rem 1.75rem; font-size:0.9rem;">
-        Get Free Access →
-      </a>
-    </div>
+    <!-- Unlocked content (hidden until signup) -->
+    <div id="resources-unlocked" style="display:none;">
+      <p class="resources-unlocked-note">You're on the list! Here are your downloads.</p>
+      <div class="resources-grid">
 
-    <p style="font-size:0.82rem; color:var(--text-muted); margin-top:2rem; text-align:center;">Enter your email for either (or both!) and get instant access. General information only — not professional tax or legal advice.</p>
+        <div class="who-card resource-card fade-up">
+          <span class="who-tag">Sole Proprietor</span>
+          <h3>British Columbia</h3>
+          <p>GST/HST dates, BC PST &amp; filing frequency, mileage log, calendar reminders.</p>
+          <a href="quick-reference-bc-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+        </div>
+
+        <div class="who-card resource-card fade-up">
+          <span class="who-tag">Sole Proprietor</span>
+          <h3>Ontario</h3>
+          <p>GST/HST (HST) dates, business numbers, mileage log, calendar reminders.</p>
+          <a href="quick-reference-on-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+        </div>
+
+        <div class="who-card resource-card fade-up">
+          <span class="who-tag">Sole Proprietor</span>
+          <h3>Alberta</h3>
+          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+          <a href="quick-reference-ab-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+        </div>
+
+        <div class="who-card resource-card fade-up">
+          <span class="who-tag">Sole Proprietor</span>
+          <h3>Yukon</h3>
+          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+          <a href="quick-reference-yt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+        </div>
+
+        <div class="who-card resource-card fade-up">
+          <span class="who-tag">Sole Proprietor</span>
+          <h3>Northwest Territories</h3>
+          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+          <a href="quick-reference-nt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+        </div>
+
+        <div class="who-card resource-card fade-up">
+          <span class="who-tag">Sole Proprietor</span>
+          <h3>Nunavut</h3>
+          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+          <a href="quick-reference-nu-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+        </div>
+
+      </div>
+      <p class="resources-note">General information only — not professional tax advice.</p>
+    </div>
   </div>
 </section>
 
@@ -1253,7 +1224,7 @@
         <span class="service-badge amber">New</span>
         <h3>My Money Organizer Spreadsheet</h3>
         <div class="service-price"><em>See pricing below</em></div>
-        <p>A Google Sheets tool that pulls all your finances into one place — income, expenses, tax projections, budgeting.</p>
+        <p>A Google Sheets tool that pulls all your finances into one place — income, expenses, tax projections, debt paydown, budgeting.</p>
         <ul class="service-list">
           <li>Customized to your situation</li>
           <li>Income/expense tracking</li>
@@ -1261,20 +1232,6 @@
           <li>Personal & business budgeting</li>
           <li>Option to add training sessions</li>
         </ul>
-      </div>
-
-      <div class="service-card fade-up">
-        <span class="service-badge">Free with My Money Organizer</span>
-        <h3>Debt Payoff Planner</h3>
-        <div class="service-price">$10</div>
-        <p>A standalone Google Sheet that projects your whole debt-free timeline. Set an avalanche or snowball strategy and it auto-cascades extra payments as debts get knocked out — plus supports one-time lump sums (tax refunds, selling a car) and planned future payment increases.</p>
-        <ul class="service-list">
-          <li>Auto-calculated payoff order</li>
-          <li>Month-by-month projection, 7 years out</li>
-          <li>Lump-sum & future payment planning</li>
-          <li>Included free when you buy My Money Organizer</li>
-        </ul>
-        <a href="https://www.paypal.com/ncp/payment/SNE64EHXA2U7N" class="btn-small" style="margin-top:1rem; display:inline-block;" target="_blank" rel="noopener">Buy Now — $10 CAD</a>
       </div>
 
       <div class="service-card fade-up">
@@ -1313,7 +1270,7 @@
       <div style="display: inline-block; background: var(--amber-50); color: var(--amber-400); padding: 0.3rem 0.9rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;">NEW</div>
       <h2 class="product-title" style="margin-bottom: 1rem;">My Money Organizer Spreadsheet</h2>
       <p style="font-size: 0.95rem; color: var(--text-mid); margin-bottom: 1.5rem;"><em>See pricing options below.</em></p>
-      <p class="product-desc">A Google Sheets or Excel tool that shows you the full picture of your finances — business income, personal expenses, tax projections, budgeting, savings, and more. Bank your transactions with our CSV importer, track everything in one place, and get clarity without juggling five different apps.</p>
+      <p class="product-desc">A Google Sheets or Excel tool that shows you the full picture of your finances — business income, personal expenses, tax projections, debt paydown, budgeting, savings, and more. Bank your transactions with our CSV importer, track everything in one place, and get clarity without juggling five different apps.</p>
       <div class="product-features">
         <div class="product-feat">
           <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -1335,10 +1292,6 @@
           <div class="feat-dot"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <span>1-hour training session</span>
         </div>
-        <div class="product-feat">
-          <div class="feat-dot" style="background: var(--amber-400);"><svg viewBox="0 0 10 10"><path d="M1 5 L4 8 L9 2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span><strong>Free bonus:</strong> our $10 Debt Payoff Planner, included at no extra cost</span>
-        </div>
       </div>
       <div class="product-pricing-tiers">
         <div class="pricing-tier">
@@ -1354,7 +1307,6 @@
           <div class="tier-note">Tool + 1 hour training</div>
         </div>
       </div>
-      <p style="font-size:0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">🎁 Both tiers include a free copy of the Debt Payoff Planner ($10 value) — <a href="#services" style="color: var(--teal-100);">or buy it on its own</a>.</p>
       <a href="#contact" class="btn-light">Get Started</a>
     </div>
     <div class="product-mockup">
@@ -1470,7 +1422,6 @@
           <option value="">Select one...</option>
           <option>My Money Organizer — $20 (self-guided, limited time)</option>
           <option>My Money Organizer — $150 (with 1 hour training)</option>
-          <option>Debt Payoff Planner — $10 (standalone)</option>
           <option>QuickBooks setup $500+ (includes 4 hours training & setup)</option>
           <option>Ongoing coaching — $150+/month</option>
           <option>Multiple services / custom package</option>
@@ -1489,45 +1440,9 @@
   </div>
 </section>
 
-<!-- EMAIL SIGNUP (Kit) -->
-<section id="newsletter" style="background: var(--teal-400); padding: 4rem 2.5rem;">
-  <div class="kit-inner" style="max-width: 580px; margin: 0 auto; text-align: center;">
-    <div class="section-label" style="color: rgba(255,255,255,0.75);">Stay in the loop</div>
-    <h2 style="font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); color: #fff; margin-bottom: 0.75rem; line-height: 1.2;">
-      Money tips, tools &amp; free resources<br><em style="font-style:italic; color:var(--teal-100);">right to your inbox</em>
-    </h2>
-    <p style="font-size: 1rem; color: rgba(255,255,255,0.8); font-weight: 300; line-height: 1.8; margin-bottom: 2rem;">
-      No spam, no fluff. Just practical Canadian money content for self-employed people who want to stay on top of their finances.
-    </p>
-    <script async data-uid="664b354dea" src="https://jane-the-money-organizer.kit.com/664b354dea/index.js"></script>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-social">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/jane_themoneyorganizer" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-      </svg>
-    </a>
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/profile.php?id=61589528843050" target="_blank" rel="noopener" aria-label="Facebook">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-      </svg>
-    </a>
-    <!-- X / Twitter -->
-    <a href="https://x.com/musingswithme" target="_blank" rel="noopener" aria-label="X (Twitter)">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-      </svg>
-    </a>
-  </div>
-  <p><strong>The Money Organizer</strong> &nbsp;·&nbsp; Money Coaching & Setup &nbsp;·&nbsp; Jane Reitsma &nbsp;·&nbsp; <a href="https://themoneyorganizer.ca">themoneyorganizer.ca</a></p>
+  <p><strong>The Money Organizer</strong> &nbsp;·&nbsp; Money Coaching & Setup &nbsp;·&nbsp; Jane Reitsma &nbsp;·&nbsp; themoneyorganizer.ca</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;">Based in British Columbia, Canada &nbsp;·&nbsp; Virtual sessions available across Canada</p>
   <p style="margin-top:0.5rem; font-size:0.75rem; opacity:0.5;">Jane Reitsma is not a licensed accountant or financial advisor. Coaching and bookkeeping services only.</p>
 </footer>
@@ -1538,6 +1453,53 @@
   formspree('initForm', { formElement: '#my-form', formId: 'xeevnzew' });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+<!-- Newsletter gate logic -->
+<script>
+  (function () {
+    var gate = document.getElementById('resources-gate');
+    var unlocked = document.getElementById('resources-unlocked');
+    var form = document.getElementById('newsletter-form');
+    var errorEl = document.getElementById('newsletter-error');
+
+    function showUnlocked() {
+      gate.style.display = 'none';
+      unlocked.style.display = 'block';
+    }
+
+    try {
+      if (localStorage.getItem('tmo_newsletter_subscribed') === 'true') {
+        showUnlocked();
+      }
+    } catch (e) { /* localStorage unavailable — gate stays visible, form still works */ }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errorEl.style.display = 'none';
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      fetch('https://formspree.io/f/xeevnzew', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          try { localStorage.setItem('tmo_newsletter_subscribed', 'true'); } catch (e) {}
+          showUnlocked();
+        } else {
+          throw new Error('Submission failed');
+        }
+      }).catch(function () {
+        errorEl.textContent = 'Something went wrong — please try again, or email jane@themoneyorganizer.ca directly.';
+        errorEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get Access';
+      });
+    });
+  })();
+</script>
 
 <!-- Fade-up animation observer -->
 <script>
