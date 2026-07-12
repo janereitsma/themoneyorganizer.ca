@@ -391,67 +391,67 @@
     text-align: center;
   }
 
-  /* ── NEWSLETTER GATE ── */
-  .newsletter-gate {
-    background: #fff;
-    border: 1px solid rgba(29,158,117,0.15);
-    border-radius: var(--radius-lg);
-    padding: 2.25rem 2.5rem;
-    max-width: 560px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .newsletter-gate-title {
+  /* ── STARTING A BUSINESS (free guides) ── */
+  .resources-subhead {
     font-family: var(--serif);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--text-dark);
-    margin-bottom: 0.65rem;
-  }
-  .newsletter-gate-note {
-    font-size: 0.88rem;
-    color: var(--text-mid);
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
-  }
-  .newsletter-gate-form {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .newsletter-gate-form input[type="email"] {
-    flex: 1;
-    min-width: 220px;
-    padding: 0.8rem 1.1rem;
-    border: 1.5px solid rgba(29,158,117,0.2);
-    border-radius: 100px;
-    font-family: var(--sans);
-    font-size: 0.9rem;
-    color: var(--text-dark);
-    background: var(--warm-white);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .newsletter-gate-form input[type="email"]:focus { border-color: var(--teal-400); }
-  .newsletter-gate-privacy {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
-    line-height: 1.5;
-  }
-  .newsletter-gate-error {
-    display: none;
-    color: var(--amber-400);
-    font-size: 0.8rem;
-    margin-top: 0.75rem;
-  }
-  .resources-unlocked-note {
-    font-size: 0.85rem;
-    color: var(--teal-600);
-    margin-bottom: 2rem;
+    margin: 3.5rem 0 0.5rem;
     text-align: center;
-    font-weight: 500;
   }
+  .resources-subhead-note {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+  }
+  .start-biz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.85rem;
+  }
+  .start-biz-card {
+    background: #fff;
+    border: 1px solid rgba(29,158,117,0.12);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .start-biz-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,110,86,0.08); }
+  .start-biz-card.free { border-color: rgba(29,158,117,0.18); }
+  .start-biz-province {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+  }
+  .start-biz-price.free-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal-600);
+    background: var(--teal-50);
+    padding: 0.15rem 0.6rem;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+  }
+  .btn-tiny {
+    display: inline-block;
+    color: var(--teal-600);
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-decoration: none;
+    border: 1.5px solid var(--teal-200);
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+  .btn-tiny:hover { background: var(--teal-400); border-color: var(--teal-400); color: #fff; }
 
   /* ── SERVICES ── */
   #services { background: var(--warm-bg); }
@@ -830,6 +830,7 @@
     .hero-title { font-size: 2.5rem; }
     section { padding: 4rem 1.5rem; }
     .who-grid, .steps, .services-grid, .resources-grid { grid-template-columns: 1fr; }
+    .start-biz-grid { grid-template-columns: repeat(2, 1fr); }
     .steps::before { display: none; }
     .product-inner { grid-template-columns: 1fr; gap: 3rem; }
     .about-inner { grid-template-columns: 1fr; }
@@ -838,8 +839,6 @@
     .about-highlights { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr !important; }
     .intro-bar { margin-top: 56px; }
-    .newsletter-gate { padding: 1.75rem 1.5rem; }
-    .newsletter-gate-form { flex-direction: column; }
   }
 </style>
 </head>
@@ -1131,70 +1130,124 @@
   <div class="section-inner">
     <div class="section-label">Free Resources</div>
     <h2 class="section-title fade-up">Tax date worksheets,<br><em style="font-family:var(--serif); color:var(--teal-400);">built for sole proprietors</em></h2>
-    <p class="section-sub fade-up">A fillable one-page PDF with your GST/HST dates, business numbers, and a mileage log — your entries save right in the file. Sign up for my newsletter below to unlock your downloads. <em>(Corporation version coming soon.)</em></p>
+    <p class="section-sub fade-up">A fillable one-page PDF with your GST/HST dates, business numbers, and a mileage log — your entries save right in the file. <em>(Corporation version coming soon.)</em></p>
+    <div class="resources-grid">
 
-    <!-- Newsletter signup gate -->
-    <div class="newsletter-gate fade-up" id="resources-gate">
-      <h3 class="newsletter-gate-title">Unlock your free downloads</h3>
-      <p class="newsletter-gate-note">Enter your email to join my newsletter and get instant access to every province's worksheet.</p>
-      <form id="newsletter-form" class="newsletter-gate-form">
-        <input type="email" name="email" placeholder="you@example.com" required data-fs-field>
-        <input type="hidden" name="_subject" value="Newsletter signup — Free Resources">
-        <button type="submit" class="btn-primary">Get Access</button>
-      </form>
-      <p class="newsletter-gate-privacy">Your information is kept private and never sold or shared. You'll only hear from me with occasional updates and tips — never spammed, and you can unsubscribe anytime.</p>
-      <p class="newsletter-gate-error" id="newsletter-error"></p>
-    </div>
-
-    <!-- Unlocked content (hidden until signup) -->
-    <div id="resources-unlocked" style="display:none;">
-      <p class="resources-unlocked-note">You're on the list! Here are your downloads.</p>
-      <div class="resources-grid">
-
-        <div class="who-card resource-card fade-up">
-          <span class="who-tag">Sole Proprietor</span>
-          <h3>British Columbia</h3>
-          <p>GST/HST dates, BC PST &amp; filing frequency, mileage log, calendar reminders.</p>
-          <a href="quick-reference-bc-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-        </div>
-
-        <div class="who-card resource-card fade-up">
-          <span class="who-tag">Sole Proprietor</span>
-          <h3>Ontario</h3>
-          <p>GST/HST (HST) dates, business numbers, mileage log, calendar reminders.</p>
-          <a href="quick-reference-on-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-        </div>
-
-        <div class="who-card resource-card fade-up">
-          <span class="who-tag">Sole Proprietor</span>
-          <h3>Alberta</h3>
-          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-          <a href="quick-reference-ab-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-        </div>
-
-        <div class="who-card resource-card fade-up">
-          <span class="who-tag">Sole Proprietor</span>
-          <h3>Yukon</h3>
-          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-          <a href="quick-reference-yt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-        </div>
-
-        <div class="who-card resource-card fade-up">
-          <span class="who-tag">Sole Proprietor</span>
-          <h3>Northwest Territories</h3>
-          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-          <a href="quick-reference-nt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-        </div>
-
-        <div class="who-card resource-card fade-up">
-          <span class="who-tag">Sole Proprietor</span>
-          <h3>Nunavut</h3>
-          <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-          <a href="quick-reference-nu-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-        </div>
-
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>British Columbia</h3>
+        <p>GST/HST dates, BC PST &amp; filing frequency, mileage log, calendar reminders.</p>
+        <a href="quick-reference-bc-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
       </div>
-      <p class="resources-note">General information only — not professional tax advice.</p>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Ontario</h3>
+        <p>GST/HST (HST) dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="quick-reference-on-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Alberta</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="quick-reference-ab-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Yukon</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="quick-reference-yt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Northwest Territories</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="quick-reference-nt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+      <div class="who-card resource-card fade-up">
+        <span class="who-tag">Sole Proprietor</span>
+        <h3>Nunavut</h3>
+        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
+        <a href="quick-reference-nu-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+      </div>
+
+    </div>
+    <p class="resources-note">100% free, no email required. General information only — not professional tax advice.</p>
+
+    <h3 class="resources-subhead fade-up">Starting a new business?</h3>
+    <p class="resources-subhead-note fade-up">A free 3-page quick-reference guide covering registration, business numbers, GST/HST, and insurance basics — one for every Canadian province and territory.</p>
+    <div class="start-biz-grid">
+
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">British Columbia</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-bc-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Alberta</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-ab-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Saskatchewan</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-sk-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Manitoba</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-mb-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Ontario</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-on-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Quebec</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-qc-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">New Brunswick</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-nb-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Nova Scotia</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-ns-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Prince Edward Island</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-pe-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Newfoundland &amp; Labrador</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-nl-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Yukon</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-yt-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Northwest Territories</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-nt-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+      <div class="start-biz-card free fade-up">
+        <div class="start-biz-province">Nunavut</div>
+        <span class="start-biz-price free-tag">Free</span><br>
+        <a href="PDFs/quick-reference-nu-starting-a-business.pdf" class="btn-tiny" download>Download</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1453,53 +1506,6 @@
   formspree('initForm', { formElement: '#my-form', formId: 'xeevnzew' });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
-<!-- Newsletter gate logic -->
-<script>
-  (function () {
-    var gate = document.getElementById('resources-gate');
-    var unlocked = document.getElementById('resources-unlocked');
-    var form = document.getElementById('newsletter-form');
-    var errorEl = document.getElementById('newsletter-error');
-
-    function showUnlocked() {
-      gate.style.display = 'none';
-      unlocked.style.display = 'block';
-    }
-
-    try {
-      if (localStorage.getItem('tmo_newsletter_subscribed') === 'true') {
-        showUnlocked();
-      }
-    } catch (e) { /* localStorage unavailable — gate stays visible, form still works */ }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      errorEl.style.display = 'none';
-      var submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
-
-      fetch('https://formspree.io/f/xeevnzew', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function (response) {
-        if (response.ok) {
-          try { localStorage.setItem('tmo_newsletter_subscribed', 'true'); } catch (e) {}
-          showUnlocked();
-        } else {
-          throw new Error('Submission failed');
-        }
-      }).catch(function () {
-        errorEl.textContent = 'Something went wrong — please try again, or email jane@themoneyorganizer.ca directly.';
-        errorEl.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Get Access';
-      });
-    });
-  })();
-</script>
 
 <!-- Fade-up animation observer -->
 <script>
