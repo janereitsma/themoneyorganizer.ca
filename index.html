@@ -453,6 +453,36 @@
   }
   .btn-tiny:hover { background: var(--teal-400); border-color: var(--teal-400); color: #fff; }
 
+  /* Province tags for gated resources */
+  .province-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+  .ptag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    background: var(--teal-50);
+    color: var(--teal-600);
+  }
+  .resource-cta-block {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+  .btn-access-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--teal-400);
+    color: #fff;
+    padding: 1rem 2.25rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(29,158,117,0.25);
+  }
+  .btn-access-main:hover { background: var(--teal-600); transform: translateY(-2px); }
+
   /* ── SERVICES ── */
   #services { background: var(--warm-bg); }
   .services-grid {
@@ -1129,125 +1159,47 @@
 <section id="resources" style="background: var(--warm-bg);">
   <div class="section-inner">
     <div class="section-label">Free Resources</div>
-    <h2 class="section-title fade-up">Tax date worksheets,<br><em style="font-family:var(--serif); color:var(--teal-400);">built for sole proprietors</em></h2>
-    <p class="section-sub fade-up">A fillable one-page PDF with your GST/HST dates, business numbers, and a mileage log — your entries save right in the file. <em>(Corporation version coming soon.)</em></p>
-    <div class="resources-grid">
+    <h2 class="section-title fade-up">Two free resources,<br><em style="font-family:var(--serif); color:var(--teal-400);">built for Canadian small business</em></h2>
+    <p class="section-sub fade-up">Sign up for the newsletter and get instant access to both — direct links to the right CRA and provincial pages, so you're never guessing what's due when or what to register.</p>
 
-      <div class="who-card resource-card fade-up">
-        <span class="who-tag">Sole Proprietor</span>
-        <h3>British Columbia</h3>
-        <p>GST/HST dates, BC PST &amp; filing frequency, mileage log, calendar reminders.</p>
-        <a href="quick-reference-bc-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
+    <div class="who-card fade-up" style="margin-bottom: 1.5rem; padding: 2rem 2.25rem;">
+      <span class="who-tag" style="display:inline-block; margin-bottom:0.75rem;">Tax Date Tracker — Sole Proprietor</span>
+      <p style="font-size:0.95rem; color:var(--text-mid); margin-bottom:1rem; line-height:1.7;">A fillable Google Sheet with your GST/HST dates, filing frequency, and direct links to the right CRA pages. Available for British Columbia, Ontario, Alberta, Yukon, Northwest Territories, and Nunavut.</p>
+      <div class="province-tags">
+        <span class="ptag">British Columbia</span>
+        <span class="ptag">Ontario</span>
+        <span class="ptag">Alberta</span>
+        <span class="ptag">Yukon</span>
+        <span class="ptag">Northwest Territories</span>
+        <span class="ptag">Nunavut</span>
       </div>
-
-      <div class="who-card resource-card fade-up">
-        <span class="who-tag">Sole Proprietor</span>
-        <h3>Ontario</h3>
-        <p>GST/HST (HST) dates, business numbers, mileage log, calendar reminders.</p>
-        <a href="quick-reference-on-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-      </div>
-
-      <div class="who-card resource-card fade-up">
-        <span class="who-tag">Sole Proprietor</span>
-        <h3>Alberta</h3>
-        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-        <a href="quick-reference-ab-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-      </div>
-
-      <div class="who-card resource-card fade-up">
-        <span class="who-tag">Sole Proprietor</span>
-        <h3>Yukon</h3>
-        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-        <a href="quick-reference-yt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-      </div>
-
-      <div class="who-card resource-card fade-up">
-        <span class="who-tag">Sole Proprietor</span>
-        <h3>Northwest Territories</h3>
-        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-        <a href="quick-reference-nt-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-      </div>
-
-      <div class="who-card resource-card fade-up">
-        <span class="who-tag">Sole Proprietor</span>
-        <h3>Nunavut</h3>
-        <p>GST dates, business numbers, mileage log, calendar reminders.</p>
-        <a href="quick-reference-nu-sole-proprietor.pdf" class="btn-small" download>Download PDF</a>
-      </div>
-
     </div>
-    <p class="resources-note">100% free, no email required. General information only — not professional tax advice.</p>
 
-    <h3 class="resources-subhead fade-up">Starting a new business?</h3>
-    <p class="resources-subhead-note fade-up">A free 3-page quick-reference guide covering registration, business numbers, GST/HST, and insurance basics — one for every Canadian province and territory.</p>
-    <div class="start-biz-grid">
+    <div class="who-card fade-up" style="padding: 2rem 2.25rem;">
+      <span class="who-tag" style="display:inline-block; margin-bottom:0.75rem;">Starting a New Business</span>
+      <p style="font-size:0.95rem; color:var(--text-mid); margin-bottom:1rem; line-height:1.7;">A free quick-reference guide covering registration, business numbers, GST/HST/PST, and place-of-supply rules if you sell across Canada. Available for all provinces and territories.</p>
+      <div class="province-tags">
+        <span class="ptag">British Columbia</span>
+        <span class="ptag">Alberta</span>
+        <span class="ptag">Saskatchewan</span>
+        <span class="ptag">Manitoba</span>
+        <span class="ptag">Ontario</span>
+        <span class="ptag">Quebec</span>
+        <span class="ptag">New Brunswick</span>
+        <span class="ptag">Nova Scotia</span>
+        <span class="ptag">Prince Edward Island</span>
+        <span class="ptag">Newfoundland &amp; Labrador</span>
+        <span class="ptag">Yukon</span>
+        <span class="ptag">Northwest Territories</span>
+        <span class="ptag">Nunavut</span>
+      </div>
+    </div>
 
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">British Columbia</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-bc-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Alberta</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-ab-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Saskatchewan</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-sk-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Manitoba</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-mb-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Ontario</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-on-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Quebec</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-qc-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">New Brunswick</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-nb-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Nova Scotia</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-ns-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Prince Edward Island</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-pe-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Newfoundland &amp; Labrador</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-nl-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Yukon</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-yt-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Northwest Territories</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-nt-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-      <div class="start-biz-card free fade-up">
-        <div class="start-biz-province">Nunavut</div>
-        <span class="start-biz-price free-tag">Free</span><br>
-        <a href="PDFs/quick-reference-nu-starting-a-business.pdf" class="btn-tiny" download>Download</a>
-      </div>
-
+    <div class="resource-cta-block fade-up">
+      <a href="https://jane-the-money-organizer.kit.com/664b354dea" class="btn-access-main">
+        Get Free Access →
+      </a>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1rem;">Enter your email to join the newsletter and get instant access to both resources. General information only — not professional tax or legal advice.</p>
     </div>
   </div>
 </section>
